@@ -2,6 +2,7 @@ mod about;
 mod home;
 mod projects;
 mod refsheet;
+mod notfound;
 
 use yew::prelude::*;
 use yew_router::prelude::*;
@@ -24,21 +25,9 @@ pub enum Route {
 pub fn switch(routes: &Route) -> Html {
     match routes {
         Route::Home => home::page(),
-        Route::About => html! {
-            <div class="content">
-                <p>{"about"}</p>
-            </div>
-        },
-        Route::Projects => html! {
-            <div class="content">
-                <p>{"projects"}</p>
-            </div>
-        },
-        Route::RefSheet => html! {
-            <div class="content">
-                <p>{"refsheet"}</p>
-            </div>
-        },
-        Route::NotFound => html! { <h1>{ "404" }</h1> },
+        Route::About => about::page(),
+        Route::Projects => projects::page(),
+        Route::RefSheet => refsheet::page(),
+        Route::NotFound => notfound::page(),
     }
 }

@@ -1,14 +1,26 @@
 use yew::prelude::*;
+use yew_router::prelude::*;
+use crate::route::Route;
 
 pub fn page() -> Html {
     html! { 
-        <div class="content" role="list">
+        <div class="content">
+            <h1>{"Home"}</h1>
             <h2>{"Welcome to my website!"}</h2>
             <p>{"I use this website to host my project portfolio as well as other information about me."}</p>
             <ul class="homepagehyperlinklist">
-                <li>{"If you'd like to know more about me, you can check out my "}<a href="about">{"about page"}</a></li>
-                <li>{"If you'd like to know more about my projects, you can check out my "}<a href="projects">{"projects page"}</a></li>
-                <li>{"If you'd like to make art involving me (thank you!) you can check out my "}<a href="refsheet">{"reference page"}</a></li>
+                <li>
+                    {"If you'd like to know more about me, you can check out my "}
+                    <Link<Route> to={Route::About}>{"about page"}</Link<Route>>
+                </li>
+                <li>
+                    {"If you'd like to know more about my projects, you can check out my "}
+                    <Link<Route> to={Route::Projects}>{"projects page"}</Link<Route>>
+                </li>
+                <li>
+                    {"If you'd like to make art involving me (thank you!) you can check out my "}
+                    <Link<Route> to={Route::RefSheet}>{"reference page"}</Link<Route>>
+                </li>
             </ul>
             <p>
                 {

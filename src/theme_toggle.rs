@@ -1,5 +1,6 @@
 use yew::prelude::*;
 use web_sys::window;
+use wasm_bindgen::JsCast;
 pub enum Msg {
     ToggleTheme
 }
@@ -16,6 +17,10 @@ impl Component for ThemeToggle {
     fn create(_: &Context<Self>) -> Self {
         let window = window()
             .expect("failed to get window!");
+        /* let document = window.document()
+            .expect("failed to get document!");
+        let html_document = document.dyn_into::<web_sys::HtmlDocument>()
+            .expect("failed to get HTMLDocument!"); */
 
         let is_dark = window.match_media("(prefers-color-scheme: dark)")
             .expect("failed to get media query!")
