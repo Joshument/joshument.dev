@@ -1,0 +1,163 @@
+@use 'themes/default' as default-theme;
+@use 'themes/dark' as dark-theme;
+
+* {
+    font-family: 'Fira Code';
+}
+
+.root {
+    width: 100vw;
+    height: 100vh;
+}
+
+body,
+.root {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    margin-top: 0;
+    margin-left: 0;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+}
+
+header {
+    position: relative;
+    align-items: center;
+    
+    padding: 0 1em 0 1em;
+
+    display: flex;
+    align-items: center;
+
+    * {
+        display: inline;
+    }
+    nav {
+        display: inline-flex;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+        ul {
+            line-height: 0px;
+            li {
+                border-bottom: 0 solid;
+                margin-right: 2em;
+                :hover {
+                    border-width: 1 0px;
+                }
+                
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
+        }
+    }
+
+    div.right-buttons {
+        flex-grow: 1;
+        button {
+            text-align: right;
+            right: 0;
+            border: none;
+            background-color: inherit;
+            color: inherit;
+            font-size: inherit;
+            float: right;
+            cursor:pointer;
+        }
+    }
+}
+
+footer {
+    padding: 0 1em 1em 1em;
+}
+
+.content{
+    padding: 0em 1em 0 1em;
+    columns: auto 50%;
+    flex: 1;
+    width: 60%;
+}
+
+.homepagehyperlinklist {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 4ch;
+    text-indent: -1em;
+    li::before {
+        content: "=> "
+    }
+}
+
+.lily {
+    position: fixed;
+    right: 0em;
+    bottom: 0em;
+    padding: 0 1em 1em 1em;
+    cursor:pointer;
+}
+
+@mixin default-theme {
+    color: default-theme.$text;
+    background-color: default-theme.$base;
+
+    a {
+        color: default-theme.$lavender;
+    }
+    header {
+        background-color: default-theme.$surface0;
+        
+        nav > ul > li {
+            a {
+                color: default-theme.$text;
+            }
+            :hover {
+                border-bottom: solid default-theme.$lavender;
+            }
+        }
+    }
+}
+
+@mixin dark-theme {
+    color: dark-theme.$text;
+    background-color: dark-theme.$base;
+
+    a {
+        color: dark-theme.$lavender;
+    }
+
+    header {
+        background-color: dark-theme.$mantle;
+        nav > ul > li {
+            a {
+                color: dark-theme.$text;
+            }
+            :hover {
+                border-bottom: solid dark-theme.$lavender;
+            }
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #root {
+        @include dark-theme;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    #root {
+        @include default-theme;
+    }
+}
+
+#root.dark-theme {
+    @include dark-theme;
+}
+
+#root.default-theme {
+    @include default-theme;
+}
