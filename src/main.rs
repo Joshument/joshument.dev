@@ -41,7 +41,6 @@ fn app() -> Html {
                     <Switch<Route> render={Switch::render(switch)}/>
                 </BrowserRouter>
 
-
                 <footer>
                     {"This website is open source! Feel free to check out the "}
                     <a href="https://github.com/Joshument/joshument.dev">{"source code"}</a>

@@ -8,18 +8,25 @@
 .root {
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
 }
 
-body,
-.root {
+.flexbox::after {
+    display: inline-block;
+    height: 100%;
+    content: '';
+}
+
+body {
     width: 100vw;
     height: 100vh;
     background-size: cover;
     margin-top: 0;
     margin-left: 0;
-    display: flex;
     position: fixed;
-    flex-direction: column;
+    overflow-y: scroll;
 }
 
 header {
@@ -72,23 +79,45 @@ header {
 }
 
 footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
     padding: 0 1em 1em 1em;
+    align-self: flex-end;
 }
 
-.content{
+.content {
     padding: 0em 1em 0 1em;
-    columns: auto 50%;
     flex: 1;
     width: 60%;
+    overflow-y: scroll;
 }
 
-.homepagehyperlinklist {
+.refsheet {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.refsheet-images {
+    padding: 0em 1em 0 1em;
+    width: 40%;
+    display: flex;
+    flex: 1;
+}
+
+.fira-arrow-unordered-list {
     list-style: none;
     margin-left: 0;
     padding-left: 4ch;
     text-indent: -1em;
     li::before {
         content: "=> "
+    }
+    ul {
+        list-style: none;
+        ::before {
+            content: "-> ";
+        }
     }
 }
 
@@ -98,6 +127,17 @@ footer {
     bottom: 0em;
     padding: 0 1em 1em 1em;
     cursor:pointer;
+}
+
+.row-1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexbox-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 @mixin default-theme {

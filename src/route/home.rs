@@ -8,7 +8,7 @@ pub fn page() -> Html {
             <h1>{"Home"}</h1>
             <h2>{"Welcome to my website!"}</h2>
             <p>{"I use this website to host my project portfolio as well as other information about me."}</p>
-            <ul class="homepagehyperlinklist">
+            <ul class="fira-arrow-unordered-list">
                 <li>
                     {"If you'd like to know more about me, you can check out my "}
                     <Link<Route> to={Route::About}>{"about page"}</Link<Route>>
