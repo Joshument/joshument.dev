@@ -18,7 +18,7 @@ pub fn page() -> Html {
                     <li>{"I'm 5'3, so not super tall."}</li>
                     <li>
                         {"If you need a reference to how I should act (expressions / poses), I would reference my "}
-                        <a href="https://twitter.com/Joshument">{"Twitter"}</a>
+                        <a href="https://twitter.com/Joshument" target="_blank" rel="noopener noreferrer">{"Twitter"}</a>
                         {"."}
                         <ul>
                             <li>{"If you care about personality types, I am an INTP 5w4 sp/sx, but taking these as gosepl is a bad idea."}</li>

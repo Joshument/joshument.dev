@@ -25,8 +25,11 @@ pub fn page() -> Html {
                 {"I also play a lot of rhythm games (my favourite being SDVX), and I use to play tetris competitively. "}
             </p>
             <p>
-                {"If you need to contact me, you can find me on "}<a href="https://twitter.com/Joshument">{"Twitter"}</a>{". "}
-                {"You might be able to DM me on Discord (Joshument#0001 / 263785241292963860), but don't count on it."}
+                {"If you need to contact me, you can find me on "}
+                <a href="https://twitter.com/Joshument" target="_blank" rel="noopener noreferrer">{"Twitter"}</a>{". "}
+                {"You might be able to DM me on "}
+                <a href="https://discord.com/users/263785241292963860" target="_blank" rel="noopener noreferrer">{"Discord"}</a>
+                {", but don't count on it."}
             </p>
             <p>
                 <strong>{"00:00"}</strong>  {" for me is "}
