@@ -22,7 +22,7 @@ pub fn page() -> Html {
             <p>
                 {"Outside of programming, you'll probably find me playing a lot of indie games - some of my favourites being Celeste, OneShot, "}
                 {"OMORI, Outer Wilds, Lobotomy Corporation, Library of Ruina, and probably a lot more I can't name off the top of my head. "}
-                {"I also play a lot of rhythm games (my favourite being SDVX), and I use to play tetris competitively. "}
+                {"I also play a lot of rhythm games (my favourite being SDVX), and I used to play tetris competitively. "}
             </p>
             <p>
                 {"If you need to contact me, you can find me on "}
