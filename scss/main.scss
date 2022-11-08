@@ -10,6 +10,10 @@
     font-family: 'Fira Code', monospace;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .root {
     width: 100vw;
     height: 100vh;
@@ -31,7 +35,7 @@ body {
     margin-top: 0;
     margin-left: 0;
     position: fixed;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 header {
