@@ -3,6 +3,7 @@ mod home;
 mod projects;
 mod refsheet;
 mod notfound;
+mod legalstuff;
 
 use yew::prelude::*;
 use yew_router::prelude::*;
@@ -17,6 +18,8 @@ pub enum Route {
     Projects,
     #[at("/refsheet")]
     RefSheet,
+    #[at("/legalstuff")]
+    LegalStuff,
     #[not_found]
     #[at("/404")]
     NotFound,
@@ -28,6 +31,7 @@ pub fn switch(routes: &Route) -> Html {
         Route::About => about::page(),
         Route::Projects => projects::page(),
         Route::RefSheet => refsheet::page(),
+        Route::LegalStuff => legalstuff::page(),
         Route::NotFound => notfound::page(),
     }
 }

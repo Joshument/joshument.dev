@@ -30,6 +30,9 @@ fn app() -> Html {
                             <li>
                                 <Link<Route> to={Route::RefSheet}>{"reference sheet"}</Link<Route>>
                             </li>
+                            <li>
+                                <Link<Route> to={Route::LegalStuff}>{"legal stuff"}</Link<Route>>
+                            </li>
                         </ul>
                     </nav>
                     <div class="right-buttons">

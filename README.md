@@ -1,2 +1,2 @@
 # joshument.dev
-up and coming website ooooooo
+sort of half finished website oooooo
