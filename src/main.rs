@@ -2,9 +2,11 @@ mod components;
 mod router;
 mod pages;
 
+use std::cell::RefCell;
 use std::ops::Deref;
+use std::rc::Rc;
 
-use components::typing_anim::TypingAnim;
+use components::typing_anim::{TypingAnim, TypingAnimState};
 use gloo::console;
 use yew;
 use yew::html::ChildrenRenderer;
@@ -47,20 +49,15 @@ impl Component for RootComponent {
                     )} 
                     text={"joshument.dev"} 
                     interval={std::time::Duration::from_millis(100)}
-                    on_finish={Callback::from(|mut component: TypingAnim| {
-                        component.class = component
-                            .class
+                    on_finish={Callback::from(|component: Rc<TypingAnimState>| {
+                        *component.class.as_ref().unwrap().borrow_mut() = component.class.as_ref().unwrap().borrow().clone()
                             .into_iter()
                             .filter(|x| {
                                 x.deref() != "mt-52"
                             })
-                            .collect();
-                        // component.class.push("mb-auto");
-                        component.class.push("mt-5");
-
-                        component
+                            .collect::<Classes>();
                     })}
-                    on_finish_propagate={on_finish_propagate}
+                    {on_finish_propagate}
                 />
             }
         ];
@@ -92,10 +89,6 @@ impl Component for RootComponent {
                 {for self.children.iter().cloned()}
             </div>
         }
-    }
-
-    fn rendered(&mut self, ctx: &Context<Self>, first_render: bool) {
-        let component = ctx.link().get_component().unwrap().deref();
     }
 }
 
