@@ -1,20 +1,20 @@
-use yew::{Properties, Children, Classes, Component, Context, Html, html};
+use yew::{html, Children, Classes, Component, Context, Html, Properties};
 
 #[derive(Properties, PartialEq)]
 pub struct PageBodyProps {
     #[prop_or_default]
     pub children: Children,
     #[prop_or_default]
-    pub class: Classes
+    pub class: Classes,
 }
 
 pub enum PageBodyMessages {
     /// At index (usize) add Html (Html)
-    AddChild(usize, Html)
+    AddChild(usize, Html),
 }
 
 pub struct PageBody {
-    children: Vec<Html>
+    children: Vec<Html>,
 }
 
 impl Component for PageBody {

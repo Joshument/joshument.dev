@@ -1,5 +1,5 @@
-use yew::prelude::*;
 use gloo::utils::document;
+use yew::prelude::*;
 
 #[function_component(ToggleDark)]
 pub fn toggle_dark() -> Html {
@@ -9,7 +9,7 @@ pub fn toggle_dark() -> Html {
                 .get_element_by_id("root")
                 .expect("Could not get root node! Did you change the id?");
             let classes = root.class_list();
-            
+
             classes.toggle("dark").expect("Failed to toggle dark mode!");
         })
     };
