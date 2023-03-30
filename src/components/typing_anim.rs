@@ -1,8 +1,9 @@
-use std::{cell::RefCell, iter::Iterator, ops::Deref, time, borrow::BorrowMut};
+use std::{borrow::BorrowMut, cell::RefCell, iter::Iterator, ops::Deref, time};
 
-use gloo::{timers::callback::Interval};
+use gloo::timers::callback::Interval;
 use yew::{
-    callback::Callback, classes, function_component, html, use_reducer, use_state, AttrValue, Classes, Html, Properties, Reducible, UseStateHandle,
+    callback::Callback, classes, function_component, html, use_reducer, use_state, AttrValue,
+    Classes, Html, Properties, Reducible, UseStateHandle,
 };
 
 type OptionalRefCellStateHandle<T> = Option<UseStateHandle<RefCell<T>>>;
@@ -106,7 +107,14 @@ pub fn typing_anim(props: &TypingAnimProps) -> Html {
     callback.interval.replace(Some(interval));
 
     let class = callback.class.borrow_mut().clone();
-    let text = callback.text.as_ref().unwrap().deref().clone().borrow().clone();
+    let text = callback
+        .text
+        .as_ref()
+        .unwrap()
+        .deref()
+        .clone()
+        .borrow()
+        .clone();
 
     html! {
         <p class={classes![props.class.clone(), class]}>{text}</p>
