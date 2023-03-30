@@ -1,4 +1,4 @@
-use std::{borrow::BorrowMut, cell::RefCell, iter::Iterator, ops::Deref, time};
+use std::{cell::RefCell, iter::Iterator, ops::Deref, time};
 
 use gloo::timers::callback::Interval;
 use yew::{

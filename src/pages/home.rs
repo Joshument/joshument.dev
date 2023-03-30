@@ -1,14 +1,14 @@
 use core::time;
-use std::cell::RefCell;
-use std::mem;
-use std::{borrow::Borrow, ops::Deref};
 
-use gloo::console;
+use std::mem;
+
+
+
 use gloo::timers::callback::Timeout;
 use yew::prelude::*;
 
-use crate::components::page_body::PageBody;
-use crate::components::typing_anim::{TypingAnim, TypingAnimState};
+
+use crate::components::typing_anim::{TypingAnim};
 
 const INTRO_LEN: usize = 1_500;
 const TITLE: &str = "joshument.dev";
