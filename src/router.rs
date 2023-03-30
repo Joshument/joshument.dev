@@ -14,7 +14,7 @@ pub enum Route {
 
 pub fn switch(routes: Route) -> Html {
     match routes {
-        Route::Home => pages::home::page(),
-        Route::NotFound => pages::notfound::page(),
+        Route::Home => html!{<pages::home::Page/>},
+        Route::NotFound => html! {<pages::notfound::Page/>},
     }
 }
